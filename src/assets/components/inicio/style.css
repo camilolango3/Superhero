@@ -1,0 +1,270 @@
+
+/* ===== ESTILO GENERAL ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+}
+
+/* ===== BOTONES DE FILTRO ===== */
+
+.c-filtro {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 35px 20px 20px;
+}
+
+.c-filtro button {
+  padding: 12px 26px;
+  color: #ddd;
+  background: #181818;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.c-filtro button:hover {
+  color: #000;
+  background: #fff;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+.c-filtro button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* ===== BUSCADOR ===== */
+
+.c-buscador {
+  display: block;
+  width: 90%;
+  max-width: 500px;
+  margin: 12px auto 20px;
+  padding: 15px 18px;
+  color: #fff;
+  background: #151515;
+  border: 1px solid #444;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.c-buscador::placeholder {
+  color: #888;
+}
+
+.c-buscador:focus {
+  border-color: #ccc;
+  box-shadow: 0 0 12px rgb(255 255 255 / 7%);
+}
+
+/* ===== SELECTOR DE EDITORIAL ===== */
+
+#root select {
+  display: block;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto 30px;
+  padding: 14px 16px;
+  color: #eee;
+  background: #151515;
+  border: 1px solid #444;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+#root select option {
+  color: #fff;
+  background: #151515;
+}
+
+#root select:focus-visible {
+  border-color: #ccc;
+}
+
+/* ===== MENSAJES ===== */
+
+#root main > p,
+#root > p {
+  margin: 25px auto;
+  padding: 20px;
+  color: #bbb;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* ===== TARJETAS DE SUPERHÉROES ===== */
+
+/* Se seleccionan únicamente las tarjetas que contienen
+   imagen y botón de favoritos. */
+
+#root div:has(> img):has(> button) {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: top;
+  width: calc(25% - 23px);
+  margin: 10px;
+  padding: 14px;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(145deg, #202020, #101010);
+  border: 1px solid #383838;
+  border-radius: 14px;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#root div:has(> img):has(> button):hover {
+  transform: translateY(-5px);
+  border-color: #aaa;
+  box-shadow: 0 12px 30px rgb(255 255 255 / 5%);
+}
+
+/* ===== NÚMERO DEL PERSONAJE ===== */
+
+#root div:has(> img):has(> button) > p:first-child {
+  align-self: flex-start;
+  margin: 0 0 8px;
+  color: #777;
+  font-size: 11px;
+}
+
+/* ===== NOMBRE DEL PERSONAJE ===== */
+
+#root div:has(> img):has(> button) > p:nth-child(2) {
+  margin: 5px 0 15px;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+/* ===== IMAGEN DEL PERSONAJE ===== */
+
+#root div:has(> img):has(> button) > img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  margin: 0 auto 16px;
+  padding: 8px;
+  object-fit: contain;
+  object-position: center;
+  background: radial-gradient(
+    circle,
+    #383838 0%,
+    #222 55%,
+    #151515 100%
+  );
+  border: 1px solid #333;
+  border-radius: 9px;
+  transition: transform 0.3s ease;
+}
+
+#root div:has(> img):has(> button):hover > img {
+  transform: scale(1.03);
+}
+
+/* ===== BOTÓN DE FAVORITOS ===== */
+
+#root div:has(> img):has(> button) > button {
+  width: 100%;
+  margin-top: auto;
+  padding: 12px 8px;
+  color: #fff;
+  background: #292929;
+  border: 1px solid #505050;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#root div:has(> img):has(> button) > button:hover {
+  color: #000;
+  background: #fff;
+  border-color: #fff;
+}
+
+/* ===== RESPONSIVE: TABLET ===== */
+
+@media (max-width: 1100px) {
+  #root div:has(> img):has(> button) {
+    width: calc(33.333% - 23px);
+  }
+
+  #root div:has(> img):has(> button) > img {
+    height: 270px;
+  }
+}
+
+/* ===== RESPONSIVE: MÓVIL ===== */
+
+@media (max-width: 750px) {
+  #root div:has(> img):has(> button) {
+    width: calc(50% - 23px);
+  }
+
+  #root div:has(> img):has(> button) > img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 450px) {
+  .c-filtro {
+    gap: 8px;
+    padding: 25px 10px 15px;
+  }
+
+  .c-filtro button {
+    padding: 10px 13px;
+    font-size: 12px;
+  }
+
+  #root div:has(> img):has(> button) {
+    width: calc(50% - 14px);
+    margin: 6px;
+    padding: 8px;
+    border-radius: 10px;
+  }
+
+  #root div:has(> img):has(> button) > img {
+    height: 180px;
+    padding: 4px;
+  }
+
+  #root div:has(> img):has(> button) > p:nth-child(2) {
+    font-size: 14px;
+  }
+
+  #root div:has(> img):has(> button) > button {
+    padding: 10px 4px;
+    font-size: 10px;
+  }
+}

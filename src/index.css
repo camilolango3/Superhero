@@ -1,0 +1,410 @@
+
+/* ==========================================
+   DARK ARENA — MENÚ PREMIUM
+   NEGRO OBSIDIANA + PLATA
+========================================== */
+
+header {
+  position: relative;
+  isolation: isolate;
+  z-index: 10;
+
+  width: 100%;
+  padding: 32px 28px 24px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(255, 255, 255, 0.075),
+      transparent 65%
+    ),
+    linear-gradient(180deg, #111114 0%, #080809 100%);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.55),
+    0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+/* Línea plateada decorativa */
+
+header::after {
+  content: '';
+
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+
+  width: min(220px, 40%);
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* ==========================================
+   TÍTULO
+========================================== */
+
+header h1 {
+  margin: 0;
+  padding: 0;
+
+  color: #f7f7fa;
+
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  text-shadow:
+    0 0 18px rgba(255, 255, 255, 0.13),
+    0 0 45px rgba(255, 255, 255, 0.045);
+
+  transition:
+    letter-spacing 0.35s ease,
+    text-shadow 0.35s ease;
+}
+
+header h1:hover {
+  letter-spacing: 5px;
+
+  text-shadow:
+    0 0 18px rgba(255, 255, 255, 0.3),
+    0 0 45px rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================
+   BARRA DE NAVEGACIÓN
+========================================== */
+
+header nav {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  width: 100%;
+  max-width: 920px;
+  padding: 9px;
+
+  background: rgba(0, 0, 0, 0.38);
+
+  border: 1px solid rgba(255, 255, 255, 0.105);
+  border-radius: 15px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================
+   BOTONES DEL MENÚ
+========================================== */
+
+header nav button {
+  position: relative;
+  overflow: hidden;
+
+  flex: 1 1 auto;
+  min-width: 90px;
+
+  padding: 13px 20px;
+
+  color: #a7a7b2;
+  background: transparent;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.45px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Reflejo sutil al pasar el cursor */
+
+header nav button::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.07) 50%,
+    transparent 80%
+  );
+
+  opacity: 0;
+  transform: translateX(-100%);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.45s ease;
+
+  pointer-events: none;
+}
+
+/* Línea plateada inferior */
+
+header nav button::after {
+  content: '';
+
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+
+  width: 0;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #a5a5ad,
+    #ffffff,
+    #a5a5ad
+  );
+
+  border-radius: 10px;
+
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================
+   HOVER — INTERACCIÓN
+========================================== */
+
+header nav button:hover {
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.09),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  border-color: rgba(255, 255, 255, 0.16);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 5px 18px rgba(0, 0, 0, 0.3),
+    0 0 14px rgba(255, 255, 255, 0.025);
+
+  transform: translateY(-2px);
+}
+
+header nav button:hover::before {
+  opacity: 1;
+  transform: translateX(100%);
+}
+
+header nav button:hover::after {
+  width: 38%;
+}
+
+/* Efecto al presionar */
+
+header nav button:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Accesibilidad del teclado */
+
+header nav button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   CONTENIDO PRINCIPAL
+========================================== */
+
+main {
+  flex: 1;
+
+  width: 100%;
+  min-width: 0;
+  padding: 28px 0 45px;
+
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   BOTONES FUERA DEL MENÚ
+   Volver, guardar, favoritos, etc.
+========================================== */
+
+main button {
+  padding: 11px 18px;
+
+  color: #eeeeF3;
+  background: linear-gradient(
+    135deg,
+    #202024,
+    #111113
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 9px;
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+main button:hover {
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #303035,
+    #19191d
+  );
+
+  border-color: rgba(255, 255, 255, 0.4);
+
+  box-shadow:
+    0 0 18px rgba(255, 255, 255, 0.06),
+    0 6px 16px rgba(0, 0, 0, 0.3);
+
+  transform: translateY(-1px);
+}
+
+main button:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width: 768px) {
+  header {
+    padding: 26px 18px 20px;
+    gap: 22px;
+  }
+
+  header h1 {
+    letter-spacing: 3px;
+  }
+
+  header nav {
+    gap: 6px;
+    padding: 7px;
+  }
+
+  header nav button {
+    min-width: 100px;
+    padding: 12px 14px;
+    font-size: 0.88rem;
+  }
+
+  main {
+    padding-top: 22px;
+  }
+}
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 480px) {
+  header {
+    padding: 24px 12px 17px;
+    gap: 19px;
+  }
+
+  header h1 {
+    font-size: 1.85rem;
+    letter-spacing: 2px;
+  }
+
+  header nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    padding: 7px;
+
+    border-radius: 12px;
+  }
+
+  header nav button {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 7px;
+
+    font-size: 0.85rem;
+    letter-spacing: 0.2px;
+  }
+
+  header nav button:hover {
+    transform: none;
+  }
+
+  header nav button::after {
+    bottom: 3px;
+  }
+
+  main {
+    padding: 17px 0 30px;
+  }
+
+  main button {
+    max-width: 100%;
+    font-size: 0.85rem;
+  }
+}
+
+/* ==========================================
+   REDUCIR ANIMACIONES SI SE PREFIERE
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  header *,
+  main button {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+

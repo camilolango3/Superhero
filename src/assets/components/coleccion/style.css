@@ -1,0 +1,331 @@
+/* ===== COLECCIÓN ===== */
+
+.coleccion {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 30px;
+  color: #f2f2f2;
+  box-sizing: border-box;
+}
+
+/* ===== TÍTULO Y CONTADOR ===== */
+
+.coleccion-titulo {
+  position: relative;
+  margin: 0 0 15px;
+  color: #fff;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.coleccion-contador {
+  margin: 20px 0;
+  color: #fff;
+  font-size: 34px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.coleccion-contador span {
+  color: #bdbdbd;
+  font-size: 25px;
+}
+
+/* ===== BOTÓN ===== */
+
+.coleccion-boton {
+  display: block;
+  margin: 25px auto 35px;
+  padding: 15px 28px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #363636, #1b1b1b);
+  border: 1px solid #777;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgb(255 255 255 / 5%);
+  cursor: pointer;
+  transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
+}
+
+.coleccion-boton:hover:not(:disabled) {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #555, #292929);
+  box-shadow: 0 10px 25px rgb(255 255 255 / 9%);
+}
+
+.coleccion-boton:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.coleccion-boton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ===== SUBTÍTULO ===== */
+
+.coleccion-subtitulo {
+  margin: 35px 0 22px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* ===== PERSONAJES NUEVOS ===== */
+
+.coleccion-nuevos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  gap: 18px;
+  max-width: 1000px;
+  margin: 0 auto 45px;
+}
+
+.coleccion-nuevo {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  padding: 18px 12px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(145deg, #242424, #141414);
+  border: 1px solid #505050;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 35%);
+  cursor: pointer;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  animation: aparecer 0.4s ease;
+}
+
+.coleccion-nuevo:hover {
+  transform: translateY(-5px);
+  border-color: #c5c5c5;
+  box-shadow: 0 12px 30px rgb(255 255 255 / 7%);
+}
+
+.coleccion-nuevo p {
+  max-width: 100%;
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+  color: #f2f2f2;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* IMÁGENES NUEVAS: MÁS GRANDES Y CLARAS */
+
+.coleccion-nuevo img {
+  display: block;
+  width: 145px;
+  height: 155px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(1.12) contrast(1.06) drop-shadow(0 5px 12px rgb(255 255 255 / 9%));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.coleccion-nuevo:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.2) contrast(1.08) drop-shadow(0 6px 14px rgb(255 255 255 / 12%));
+}
+
+/* PERSONAJES REPETIDOS */
+
+.coleccion-nuevo.repetido {
+  background: linear-gradient(145deg, #292323, #181515);
+  border-color: #795454;
+  opacity: 0.82;
+}
+
+.coleccion-nuevo.repetido span {
+  padding: 5px 10px;
+  color: #f0d0d0;
+  font-size: 11px;
+  font-weight: 700;
+  background: #382727;
+  border: 1px solid #654343;
+  border-radius: 7px;
+}
+
+/* ===== ÁLBUM COMPLETO ===== */
+
+.coleccion-album {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+  gap: 15px;
+}
+
+/* ===== CASILLAS DEL ÁLBUM ===== */
+
+.coleccion-personaje {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 125px;
+  padding: 12px 7px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: #aaa;
+  background: linear-gradient(145deg, #1d1d1d, #101010);
+  border: 1px solid #363636;
+  border-radius: 13px;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.coleccion-personaje p {
+  margin: 7px 0 0;
+  color: #aaa;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* PERSONAJES DESBLOQUEADOS */
+
+.coleccion-personaje.capturado {
+  color: #fff;
+  background: linear-gradient(145deg, #292929, #191919);
+  border-color: #666;
+  cursor: pointer;
+}
+
+.coleccion-personaje.capturado:hover {
+  transform: translateY(-4px);
+  border-color: #ddd;
+  box-shadow: 0 8px 24px rgb(255 255 255 / 7%);
+}
+
+/* IMÁGENES DEL ÁLBUM: MÁS GRANDES */
+
+.coleccion-personaje img {
+  display: block;
+  width: 125px;
+  height: 100px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(1.12) contrast(1.08);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.coleccion-personaje.capturado:hover img {
+  transform: scale(1.12);
+  filter: brightness(1.2) contrast(1.1);
+}
+
+/* ===== ANIMACIÓN ===== */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== TABLETS ===== */
+
+@media (max-width: 750px) {
+  .coleccion {
+    padding: 20px;
+  }
+
+  .coleccion-album {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .coleccion-personaje {
+    min-height: 110px;
+  }
+
+  .coleccion-personaje img {
+    width: 75px;
+    height: 62px;
+  }
+
+  .coleccion-nuevos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .coleccion-nuevo img {
+    width: 115px;
+    height: 125px;
+  }
+}
+
+/* ===== CELULARES ===== */
+
+@media (max-width: 480px) {
+  .coleccion {
+    padding: 12px;
+  }
+
+  .coleccion-contador {
+    font-size: 28px;
+  }
+
+  .coleccion-contador span {
+    font-size: 20px;
+  }
+
+  .coleccion-boton {
+    width: 100%;
+    padding: 14px 8px;
+    font-size: 13px;
+  }
+
+  .coleccion-nuevos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .coleccion-nuevo {
+    padding: 12px 6px;
+    border-radius: 12px;
+  }
+
+  .coleccion-nuevo img {
+    width: 115px;
+    height: 125px;
+  }
+
+  .coleccion-album {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .coleccion-personaje {
+    min-height: 100px;
+    padding: 8px 4px;
+    border-radius: 10px;
+  }
+
+  .coleccion-personaje img {
+    width: 65px;
+    height: 58px;
+  }
+
+  .coleccion-personaje p {
+    font-size: 10px;
+  }
+}

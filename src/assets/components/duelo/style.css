@@ -1,0 +1,452 @@
+/* ==============================
+   ESTILO GENERAL
+============================== */
+
+.duelo {
+  --azul: #e5e5e5;
+  --violeta: #a3a3a3;
+  --fondo: #050505;
+  --panel: #171717;
+  --texto: #f5f5f5;
+  --secundario: #a3a3a3;
+
+  width: 100%;
+  max-width: 1500px; /* Mantener max-width original */
+  margin: 30px auto;
+  padding: 32px;
+  box-sizing: border-box;
+  color: var(--texto);
+  background:
+    radial-gradient(ellipse at top left, #242424 0%, transparent 43%),
+    radial-gradient(ellipse at bottom right, #191919 0%, transparent 45%),
+    var(--fondo);
+  border: 1px solid #383838;
+  border-radius: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 20px 60px #000;
+}
+
+/* TÍTULO PRINCIPAL */
+
+.duelo > h2:first-child {
+  margin: 0 0 30px;
+  color: #fff;
+  text-align: center;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px #ffffff20;
+}
+
+/* ==============================
+   SELECTORES DE PERSONAJES
+============================== */
+
+.duelo > label {
+  display: block;
+  margin: 18px 0 9px;
+  color: #dedede;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.duelo > select {
+  display: block;
+  width: 100%;
+  padding: 15px 16px;
+  color: #fff;
+  background: #171717;
+  border: 1px solid #454545;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.duelo > select:focus {
+  border-color: #c9c9c9;
+  box-shadow: 0 0 0 3px #ffffff12;
+}
+
+.duelo > select option {
+  color: #fff;
+  background: #171717;
+}
+
+/* ==============================
+   BOTONES
+============================== */
+
+.duelo button {
+  padding: 12px 20px;
+  color: #fff;
+  background: linear-gradient(135deg, #424242, #202020);
+  border: 1px solid #5a5a5a;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.duelo button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #5a5a5a, #303030);
+  box-shadow: 0 8px 22px #ffffff0d;
+}
+
+.duelo button:active {
+  transform: scale(0.98);
+}
+
+.duelo > button {
+  display: block;
+  width: 100%;
+  margin-top: 22px;
+  padding: 16px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ==============================
+   ARENA DEL DUELO (FIJADO)
+============================== */
+
+.resultado-duelo {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 38px;
+}
+
+/* Distribución de los participantes en una fila */
+.participantes {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 22px;
+}
+
+/* TARJETAS DE PERSONAJES (FIJADO) */
+
+.participante {
+  flex: 1 1 0; /* Permitir que las tarjetas crezcan */
+  max-width: calc(50% - 41px); /* Espacio para el VS central */
+  padding: 22px 16px;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(155deg, #242424, #111111);
+  border: 1px solid #414141;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px #0008;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+/* Bordes superiores de colores para participantes 1 y 2 */
+.participante:first-child {
+  border-top: 3px solid #d4d4d4;
+}
+
+.participante:last-child {
+  border-top: 3px solid #777;
+}
+
+.participante:hover {
+  transform: translateY(-4px);
+  border-color: #aaa;
+  box-shadow: 0 16px 36px #000b;
+}
+
+/* IMÁGENES GRANDES Y CLARAS (FIJADO) */
+
+.participante img {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: auto; /* Mantener proporción de imagen */
+  aspect-ratio: 1 / 1.15; /* Dar una proporción estable */
+  margin: 0 auto 20px;
+  padding: 8px;
+  object-fit: cover; /* Llenar el contenedor sin deformar */
+  object-position: top center; /* Enfocar en el rostro */
+  background: radial-gradient(circle, #383838 0%, #222 55%, #141414 100%);
+  border: 1px solid #393939;
+  border-radius: 13px;
+  filter: brightness(1.08) contrast(1.04);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.participante:hover img {
+  transform: scale(1.025);
+  filter: brightness(1.15) contrast(1.07);
+}
+
+/* NOMBRE DEL PERSONAJE */
+
+.participante h3 {
+  margin: 12px 0;
+  color: #fff;
+  font-size: clamp(19px, 2vw, 27px);
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+/* PUNTUACIÓN (FIJADO) */
+
+.participante p {
+  display: inline-block;
+  margin: 8px 0 18px;
+  padding: 10px 20px;
+  color: #fff;
+  background: #303030;
+  border: 1px solid #626262;
+  border-radius: 30px;
+  font-size: 19px;
+  font-weight: 900;
+  white-space: nowrap; /* Evitar que el texto rompa */
+}
+
+/* Botón de puntuación para el segundo participante */
+.participante:last-child p {
+  color: #e5e5e5;
+  background: #242424;
+  border-color: #777;
+}
+
+/* BOTÓN DE DETALLES */
+
+.participante button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* ==============================
+   VS EN EL CENTRO (FIJADO)
+============================== */
+
+/* Mantenemos el VS flotando sobre la fila central */
+.resultado-duelo .vs-wrapper {
+  position: relative;
+  height: 0;
+}
+
+.participantes-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 82px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: #080808;
+  background: linear-gradient(135deg, #fff, #a3a3a3);
+  border: 4px solid #333;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #ffffff20, 0 0 50px #ffffff0a;
+  font-size: 27px;
+  font-weight: 1000;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ==============================
+   RESULTADO CENTRAL (FIJADO)
+============================== */
+
+.resultado-central-duelo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.resultado-duelo > h2 {
+  margin: 0;
+  padding: 20px 12px;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(145deg, #242424, #151515);
+  border: 1px solid #555;
+  border-radius: 13px;
+  font-size: 21px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.resultado-duelo > h2:not(:first-child) {
+  color: #f5f5f5;
+  text-shadow: 0 0 12px #ffffff10;
+}
+
+/* TÍTULO DE LAS HABILIDADES */
+
+.resultado-duelo > h3 {
+  margin: 8px 0 0;
+  padding-bottom: 12px;
+  color: #e5e5e5;
+  border-bottom: 1px solid #454545;
+  font-size: 17px;
+  text-align: center;
+}
+
+/* RESULTADOS DE HABILIDADES */
+
+.resultado-duelo > p {
+  margin: 0;
+  padding: 13px 14px;
+  color: #e5e5e5;
+  background: #191919;
+  border: 1px solid #363636;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.resultado-duelo > p:hover {
+  background: #252525;
+  border-color: #777;
+}
+
+/* BOTÓN DE NUEVO DUELO */
+
+.resultado-duelo > button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px;
+}
+
+/* ==============================
+   TABLETS
+============================== */
+
+@media (max-width: 950px) {
+  .duelo {
+    padding: 22px;
+  }
+
+  .participantes {
+    gap: 12px;
+  }
+
+  .participante {
+    padding: 15px 10px;
+    max-width: calc(50% - 31px);
+  }
+
+  .participante img {
+    max-width: 290px;
+  }
+
+  .participantes-vs {
+    width: 62px;
+    height: 62px;
+    font-size: 21px;
+  }
+
+  .resultado-duelo > h2 {
+    font-size: 18px;
+  }
+}
+
+/* ==============================
+   CELULARES
+============================== */
+
+@media (max-width: 650px) {
+  .duelo {
+    margin: 12px auto;
+    padding: 15px;
+    border-radius: 17px;
+  }
+
+  .duelo > h2:first-child {
+    letter-spacing: 1px;
+  }
+
+  .participantes {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .participante {
+    max-width: 100%;
+    padding: 10px 7px;
+    border-radius: 12px;
+  }
+
+  .resultado-duelo .vs-wrapper {
+    position: static;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .participantes-vs {
+    position: static;
+    transform: none;
+    width: 58px;
+    height: 58px;
+    font-size: 20px;
+    margin: 0 auto;
+  }
+
+  .participante img {
+    height: 220px;
+    padding: 4px;
+    object-fit: contain; /* En celular evitar recortar */
+  }
+
+  .participante h3 {
+    font-size: 16px;
+  }
+
+  .participante p {
+    padding: 8px 11px;
+    font-size: 15px;
+  }
+
+  .participante button {
+    padding: 10px 5px;
+    font-size: 12px;
+  }
+
+  .resultado-duelo > h2 {
+    font-size: 19px;
+  }
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 360px) {
+  .duelo {
+    padding: 10px;
+  }
+
+  .participante {
+    padding: 8px 5px;
+  }
+
+  .participante img {
+    height: 175px;
+  }
+
+  .participante h3 {
+    font-size: 14px;
+  }
+
+  .participante button {
+    font-size: 11px;
+  }
+}

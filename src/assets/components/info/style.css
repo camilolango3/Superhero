@@ -1,0 +1,364 @@
+
+/* ==========================================
+   DARK ARENA — INFORMACIÓN
+   NEGRO OBSIDIANA + BLANCO PLATEADO
+========================================== */
+
+.info {
+  position: relative;
+  isolation: isolate;
+
+  width: calc(100% - 40px);
+  max-width: 1500px;
+  margin: 25px auto;
+  padding: 20px;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  color: #e8e8ed;
+  font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(255, 255, 255, 0.055),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 100% 80%,
+      rgba(255, 255, 255, 0.025),
+      transparent 32%
+    ),
+    linear-gradient(145deg, #101014, #050506 75%);
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 22px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.55),
+    0 0 30px rgba(255, 255, 255, 0.025),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* ==========================================
+   IMAGEN INFORMATIVA
+========================================== */
+
+.info-imagen {
+  display: block;
+
+  width: 100%;
+  max-width: none;
+  height: auto;
+
+  margin: 0 auto;
+  object-fit: contain;
+
+  background: #080809;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.info-imagen:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.4),
+    0 0 18px rgba(255, 255, 255, 0.035);
+}
+
+/* ==========================================
+   BOTÓN SECRETO
+========================================== */
+
+.boton-secreto {
+  position: absolute;
+  z-index: 2;
+
+  right: 12px;
+  bottom: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+  padding: 0;
+
+  color: #85858e;
+  font-size: 13px;
+
+  background: rgba(8, 8, 9, 0.94);
+
+  border: 1px solid #45454c;
+  border-radius: 50%;
+
+  opacity: 0.4;
+  cursor: pointer;
+
+  transition:
+    opacity 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.boton-secreto:hover,
+.boton-secreto:focus-visible {
+  color: #ffffff;
+
+  background: #17171b;
+  border-color: #ffffff;
+
+  opacity: 1;
+
+  box-shadow:
+    0 0 14px rgba(255, 255, 255, 0.12),
+    0 0 28px rgba(255, 255, 255, 0.035);
+
+  transform: scale(1.08);
+  outline: none;
+}
+
+/* ==========================================
+   EASTER EGG DEL GATO
+========================================== */
+
+.easter-egg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+
+  margin-top: 25px;
+  padding: 28px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255, 255, 255, 0.055),
+      transparent 65%
+    ),
+    linear-gradient(145deg, #151518, #09090b);
+
+  border: 1px dashed rgba(255, 255, 255, 0.35);
+  border-radius: 17px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 10px 30px rgba(0, 0, 0, 0.25);
+
+  animation: aparecer-gato 0.4s ease-out;
+}
+
+/* Imagen del gato */
+
+.easter-egg img {
+  display: block;
+
+  width: 400px;
+  max-width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  background: #080809;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.4),
+    0 0 22px rgba(255, 255, 255, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.easter-egg img:hover {
+  transform: scale(1.015);
+  border-color: rgba(255, 255, 255, 0.4);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(255, 255, 255, 0.08);
+}
+
+/* Mensaje del easter egg */
+
+.easter-egg p {
+  margin: 0;
+
+  color: #eeeeee;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ==========================================
+   BOTÓN PARA CERRAR EL EASTER EGG
+========================================== */
+
+.cerrar-easter-egg {
+  padding: 10px 20px;
+
+  color: #eeeeee;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  background: linear-gradient(145deg, #222226, #101012);
+
+  border: 1px solid #505057;
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.cerrar-easter-egg:hover {
+  color: #080809;
+  background: #ffffff;
+  border-color: #ffffff;
+
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.1);
+
+  transform: translateY(-2px);
+}
+
+.cerrar-easter-egg:active {
+  transform: scale(0.97);
+}
+
+.cerrar-easter-egg:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   ANIMACIÓN DEL GATO
+========================================== */
+
+@keyframes aparecer-gato {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+  .info {
+    width: calc(100% - 30px);
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .info-imagen {
+    border-radius: 10px;
+  }
+
+  .easter-egg {
+    gap: 15px;
+    padding: 22px;
+  }
+}
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 550px) {
+  .info {
+    width: calc(100% - 20px);
+    margin: 12px auto;
+    padding: 8px;
+
+    border-radius: 14px;
+  }
+
+  .info-imagen {
+    border-radius: 8px;
+  }
+
+  .easter-egg {
+    gap: 13px;
+    margin-top: 16px;
+    padding: 18px 12px;
+
+    border-radius: 12px;
+  }
+
+  .easter-egg img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .easter-egg p {
+    font-size: 13px;
+  }
+
+  .boton-secreto {
+    right: 5px;
+    bottom: 5px;
+
+    width: 25px;
+    height: 25px;
+  }
+
+  .cerrar-easter-egg {
+    max-width: 100%;
+    padding: 10px 16px;
+  }
+}
+
+/* ==========================================
+   PANTALLAS GRANDES
+========================================== */
+
+@media (min-width: 1600px) {
+  .info {
+    max-width: 1600px;
+  }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .info *,
+  .info *::before,
+  .info *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
