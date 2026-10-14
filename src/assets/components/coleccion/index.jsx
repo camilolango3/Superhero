@@ -74,7 +74,7 @@ function Coleccion({ personajes, coleccion, abrirHeroe, agregarColeccion }) {
       <h1 className="coleccion-titulo">Colección</h1>
 
       <p className="coleccion-contador">
-        {coleccion.length} <span>/ {totalHeroes}</span>
+        <span> SON {totalHeroes} PARA DESBLOQUEAR!</span>
       </p>
 
       <button
